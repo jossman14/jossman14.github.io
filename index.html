@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tanzilal Mustaqim — Researcher & Full-Stack Developer</title>
+<meta name="description" content="Portfolio of Tanzilal Mustaqim — Medical Computer Vision researcher & Full-Stack Developer. 373+ citations, h-index 10.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fbfbfd; --surface:#ffffff; --surface-2:#f4f5f8;
+  --ink:#14161c; --ink-2:#4a5163; --ink-3:#7d8494;
+  --line:#e6e8ee; --brand:#2563eb; --brand-2:#0ea5e9; --brand-soft:#eaf1ff;
+  --accent:#0f766e; --shadow:0 1px 2px rgba(20,22,28,.04),0 8px 24px rgba(20,22,28,.06);
+  --shadow-lg:0 12px 40px rgba(20,22,28,.10);
+  --radius:16px; --maxw:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.display{font-family:'Space Grotesk','Inter',sans-serif;letter-spacing:-.02em;line-height:1.15}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+section{padding:88px 0}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brand)}
+.sec-title{font-size:clamp(28px,4vw,40px);font-weight:700;margin:10px 0 14px}
+.sec-lead{color:var(--ink-2);max-width:640px;font-size:17px}
+.nav{position:sticky;top:0;z-index:50;background:rgba(251,251,253,.8);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+.nav.scrolled{border-color:var(--line);box-shadow:0 4px 20px rgba(20,22,28,.04)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:'Space Grotesk';font-weight:700;font-size:18px;display:flex;align-items:center;gap:10px}
+.brand .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand-2));box-shadow:0 0 0 4px var(--brand-soft)}
+.nav-links{display:flex;gap:6px;align-items:center}
+.nav-links a{padding:8px 14px;border-radius:10px;font-size:14.5px;font-weight:500;color:var(--ink-2);transition:.2s}
+.nav-links a:hover{background:var(--surface-2);color:var(--ink)}
+.nav-cta{background:var(--ink);color:#fff!important;font-weight:600}
+.nav-cta:hover{background:var(--brand)!important;color:#fff!important}
+.burger{display:none;background:none;border:0;cursor:pointer;padding:8px}
+.burger span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0;border-radius:2px;transition:.3s}
+.hero{padding:72px 0 64px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 300px at 15% 0%,rgba(37,99,235,.08),transparent 60%),radial-gradient(500px 320px at 92% 30%,rgba(14,165,233,.10),transparent 60%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.35fr .95fr;gap:56px;align-items:center;position:relative}
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);padding:6px 14px;border-radius:999px;font-size:13px;font-weight:500;color:var(--ink-2);box-shadow:var(--shadow)}
+.badge .pulse{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 0 rgba(34,197,94,.5);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(34,197,94,.5)}70%{box-shadow:0 0 0 8px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+.hero h1{font-size:clamp(38px,6vw,62px);font-weight:700;margin:22px 0 8px}
+.hero h1 .grad{background:linear-gradient(120deg,var(--brand),var(--brand-2) 55%,var(--accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero .role{font-size:clamp(18px,2.4vw,22px);font-weight:600;color:var(--ink);font-family:'Space Grotesk'}
+.hero p.lead{color:var(--ink-2);font-size:17.5px;margin:18px 0 28px;max-width:560px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 20px;border-radius:12px;font-weight:600;font-size:15px;transition:.2s;border:1px solid transparent;cursor:pointer}
+.btn-primary{background:var(--ink);color:#fff}
+.btn-primary:hover{background:var(--brand);transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.btn-ghost{background:var(--surface);border-color:var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--brand);color:var(--brand);transform:translateY(-2px)}
+.hero-socials{display:flex;gap:10px;margin-top:26px}
+.hero-socials a{width:42px;height:42px;display:grid;place-items:center;border-radius:11px;background:var(--surface);border:1px solid var(--line);color:var(--ink-2);transition:.2s}
+.hero-socials a:hover{color:#fff;background:var(--brand);border-color:var(--brand);transform:translateY(-2px)}
+.hero-socials svg{width:19px;height:19px}
+.avatar-card{position:relative}
+.avatar-inner{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:var(--shadow-lg);position:relative;z-index:2}
+.avatar-ring{width:150px;height:150px;border-radius:50%;margin:0 auto 16px;display:grid;place-items:center;font-family:'Space Grotesk';font-weight:700;font-size:52px;color:#fff;background:linear-gradient(135deg,var(--brand),var(--brand-2) 60%,var(--accent));box-shadow:0 10px 30px rgba(37,99,235,.35);position:relative;overflow:hidden}
+.avatar-ring img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 22%}
+.avatar-inner h3{text-align:center;font-size:20px}
+.avatar-inner .sub{text-align:center;color:var(--ink-3);font-size:14px;margin-top:2px}
+.mini-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:20px;padding-top:20px;border-top:1px solid var(--line)}
+.mini-stats div{text-align:center}
+.mini-stats b{display:block;font-family:'Space Grotesk';font-size:22px;font-weight:700;color:var(--brand)}
+.mini-stats span{font-size:11.5px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.06em}
+.float-tag{position:absolute;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:9px 13px;font-size:12.5px;font-weight:600;box-shadow:var(--shadow);z-index:3;display:flex;align-items:center;gap:7px}
+.float-tag.t1{top:-14px;right:-8px;color:var(--brand)}
+.float-tag.t2{bottom:24px;left:-26px;color:var(--accent)}
+.float-tag i{width:8px;height:8px;border-radius:50%;background:currentColor;display:inline-block}
+.stats{background:var(--ink);color:#fff}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding-top:44px;padding-bottom:44px}
+.stat b{font-family:'Space Grotesk';font-size:clamp(30px,4vw,44px);font-weight:700;background:linear-gradient(120deg,#fff,#a9c7ff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.stat span{color:#aeb6c9;font-size:14.5px;display:block;margin-top:4px}
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start}
+.about-grid p{color:var(--ink-2);font-size:16.5px;margin-bottom:16px}
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:8px}
+.chip{background:var(--surface);border:1px solid var(--line);color:var(--ink-2);padding:7px 14px;border-radius:999px;font-size:13.5px;font-weight:500}
+.chip.brand{background:var(--brand-soft);border-color:transparent;color:var(--brand)}
+.info-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+.info-card h4{font-family:'Space Grotesk';font-size:16px;margin-bottom:16px}
+.info-row{display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line);font-size:14.5px}
+.info-row:last-child{border-bottom:0}
+.info-row .k{color:var(--ink-3);min-width:98px;font-weight:500}
+.info-row .v{color:var(--ink);font-weight:500}
+.edu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:8px}
+.edu{display:flex;gap:18px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);transition:.2s}
+.edu:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.edu .cap{width:48px;height:48px;border-radius:12px;flex-shrink:0;display:grid;place-items:center;background:var(--brand-soft);font-size:22px}
+.edu h4{font-size:16.5px;margin-bottom:3px}
+.edu .deg{color:var(--brand);font-weight:600;font-size:14px}
+.edu .yr{color:var(--ink-3);font-size:13.5px;margin-top:2px}
+.theme-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:8px}
+.theme{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);transition:.25s;position:relative;overflow:hidden}
+.theme:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:transparent}
+.theme .ic{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;background:var(--brand-soft);margin-bottom:16px;font-size:22px}
+.theme h3{font-size:18px;margin-bottom:8px}
+.theme p{color:var(--ink-2);font-size:14.5px}
+.theme .n{position:absolute;top:20px;right:22px;font-family:'Space Grotesk';font-weight:700;font-size:14px;color:var(--ink-3);background:var(--surface-2);padding:3px 10px;border-radius:999px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0}
+.filter{padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-size:14px;font-weight:500;color:var(--ink-2);cursor:pointer;transition:.2s}
+.filter:hover{border-color:var(--brand);color:var(--brand)}
+.filter.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.pub-list{display:grid;gap:12px;min-height:200px}
+.pub{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 22px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;box-shadow:var(--shadow);transition:.2s}
+.pub:hover{border-color:var(--brand);transform:translateX(3px)}
+.pub h4{font-family:'Inter';font-size:16px;font-weight:600;line-height:1.4;margin-bottom:6px}
+.pub .meta{color:var(--ink-3);font-size:13.5px}
+.pub .tags{display:flex;gap:7px;margin-top:9px;flex-wrap:wrap}
+.pub .tag{font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:6px;background:var(--surface-2);color:var(--ink-2)}
+.pub .tag.year{background:var(--brand-soft);color:var(--brand)}
+.cite{text-align:center;min-width:78px}
+.cite b{display:block;font-family:'Space Grotesk';font-size:26px;font-weight:700;color:var(--ink)}
+.cite span{font-size:11px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.05em}
+.cite.hot b{color:var(--brand)}
+.pager{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:28px;flex-wrap:wrap}
+.pager button{min-width:40px;height:40px;padding:0 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface);font-weight:600;font-size:14px;color:var(--ink-2);cursor:pointer;transition:.2s;font-family:'Inter'}
+.pager button:hover:not(:disabled){border-color:var(--brand);color:var(--brand)}
+.pager button.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.pager button:disabled{opacity:.4;cursor:not-allowed}
+.pager .info{color:var(--ink-3);font-size:13.5px;margin:0 8px}
+.pub-more{text-align:center;margin-top:22px}
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.proj{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);transition:.25s;display:flex;flex-direction:column}
+.proj:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.proj .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.proj .lang{font-size:12px;font-weight:600;color:var(--ink-2);display:flex;align-items:center;gap:7px}
+.proj .lang i{width:10px;height:10px;border-radius:50%;display:inline-block}
+.proj .kind{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-3);background:var(--surface-2);padding:3px 9px;border-radius:6px}
+.proj h3{font-size:16.5px;margin-bottom:8px}
+.proj p{color:var(--ink-2);font-size:14px;flex:1}
+.proj .stack{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
+.proj .stack span{font-size:11px;color:var(--ink-3);background:var(--surface-2);padding:3px 8px;border-radius:6px}
+.proj-note{text-align:center;color:var(--ink-3);font-size:14px;margin-top:24px}
+.books{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:8px}
+.book{display:flex;gap:20px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);align-items:center}
+.book .cover{width:72px;height:96px;border-radius:8px;flex-shrink:0;display:grid;place-items:center;color:#fff;font-family:'Space Grotesk';font-weight:700;font-size:12px;text-align:center;padding:8px;line-height:1.2}
+.book .cover.a{background:linear-gradient(160deg,#2563eb,#0ea5e9)}
+.book .cover.b{background:linear-gradient(160deg,#0f766e,#22c55e)}
+.book h4{font-size:16px;margin-bottom:4px}
+.book span{color:var(--ink-3);font-size:13.5px}
+.contact{background:linear-gradient(135deg,#141821,#1e2634);color:#fff;border-radius:28px;padding:56px;text-align:center;position:relative;overflow:hidden}
+.contact::before{content:"";position:absolute;inset:0;background:radial-gradient(500px 260px at 50% 0%,rgba(37,99,235,.28),transparent 60%)}
+.contact h2{font-size:clamp(28px,4vw,40px);position:relative}
+.contact p{color:#c3cad9;max-width:520px;margin:14px auto 30px;position:relative;font-size:17px}
+.contact-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative}
+.btn-white{background:#fff;color:var(--ink)}
+.btn-white:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.btn-outline{background:transparent;border:1px solid rgba(255,255,255,.25);color:#fff}
+.btn-outline:hover{background:rgba(255,255,255,.1);transform:translateY(-2px)}
+footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:var(--ink-3);font-size:14px}
+footer .fsoc{display:flex;gap:14px;justify-content:center;margin-bottom:16px}
+footer .fsoc a{color:var(--ink-3);transition:.2s}
+footer .fsoc a:hover{color:var(--brand)}
+footer .fsoc svg{width:20px;height:20px}
+.reveal{opacity:0;transform:translateY(24px);transition:.7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:940px){
+  .hero-grid,.about-grid{grid-template-columns:1fr;gap:40px}
+  .avatar-card{max-width:360px;margin:0 auto}
+  .theme-grid,.proj-grid{grid-template-columns:repeat(2,1fr)}
+  .stats .wrap{grid-template-columns:repeat(2,1fr);gap:32px}
+  .books,.edu-grid{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  section{padding:60px 0}
+  .nav-links{position:fixed;inset:64px 0 auto 0;flex-direction:column;background:var(--surface);border-bottom:1px solid var(--line);padding:14px 20px;gap:4px;align-items:stretch;transform:translateY(-170%);transition:.35s;box-shadow:var(--shadow-lg)}
+  .nav-links.open{transform:none}
+  .nav-links a{padding:12px}
+  .burger{display:block}
+  .theme-grid,.proj-grid{grid-template-columns:1fr}
+  .pub{grid-template-columns:1fr}
+  .cite{text-align:left;display:flex;gap:8px;align-items:baseline}
+  .cite b{font-size:20px}
+  .contact{padding:40px 22px}
+  .float-tag.t2{left:-8px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#home" class="brand"><span class="dot"></span>Tanzilal&nbsp;Mustaqim</a>
+    <div class="nav-links" id="navlinks">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div class="reveal in">
+      <span class="badge"><span class="pulse"></span>Open to research & engineering collaboration</span>
+      <h1>Building <span class="grad">intelligent vision</span><br>for health &amp; the web.</h1>
+      <p class="role">Researcher · Computer Vision &amp; Deep Learning · Full-Stack Developer</p>
+      <p class="lead">I research deep learning for medical imaging — leukemia, diabetic retinopathy, and liver disease detection — while shipping modern full-stack applications from research to production.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View Projects
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#publications" class="btn btn-ghost">Publications</a>
+      </div>
+      <div class="hero-socials">
+        <a href="https://www.linkedin.com/in/tanzilal-mustaqim/" target="_blank" title="LinkedIn" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.07c.67-1.2 2.3-2.5 4.73-2.5 5.06 0 6 3.3 6 7.6V24h-5v-7.1c0-1.7 0-3.9-2.4-3.9s-2.75 1.86-2.75 3.78V24h-5V8z"/></svg>
+        </a>
+        <a href="https://scholar.google.com/citations?user=ltFcWtEAAAAJ&hl=id" target="_blank" title="Google Scholar" aria-label="Google Scholar">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z"/></svg>
+        </a>
+        <a href="https://github.com/jossman14" target="_blank" title="GitHub" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02.8-.22 1.65-.33 2.5-.33.85 0 1.7.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 22 12c0-5.52-4.48-10-10-10z"/></svg>
+        </a>
+        <a href="https://x.com/DerekLeon14" target="_blank" title="X" aria-label="X">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.5 8.6L23 22h-6.9l-5.4-7-6.2 7H1.4l8-9.2L1 2h7l4.9 6.5L18.9 2zm-2.4 18h1.9L7.6 4H5.6l10.9 16z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="avatar-card reveal in">
+      <div class="float-tag t1"><i></i>h-index 10</div>
+      <div class="float-tag t2"><i></i>85 repos</div>
+      <div class="avatar-inner">
+        <div class="avatar-ring"><span>TM</span><img src="profile.png" alt="Tanzilal Mustaqim" onerror="this.remove()"></div>
+        <h3>Tanzilal Mustaqim</h3>
+        <p class="sub">Telkom University · ex-ITS</p>
+        <div class="mini-stats">
+          <div><b>373</b><span>Citations</span></div>
+          <div><b>34</b><span>Papers</span></div>
+          <div><b>11</b><span>i10-index</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="wrap">
+    <div class="stat reveal"><b>373</b><span>Total Google Scholar citations</span></div>
+    <div class="stat reveal"><b>10</b><span>h-index</span></div>
+    <div class="stat reveal"><b>34</b><span>Scientific publications</span></div>
+    <div class="stat reveal"><b>2</b><span>Published books</span></div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <span class="eyebrow reveal">About</span>
+    <h2 class="sec-title reveal">Medical imaging researcher &amp; builder.</h2>
+    <div class="about-grid" style="margin-top:32px">
+      <div class="reveal">
+        <p>Tanzilal Mustaqim is a researcher in <strong>Computer Vision</strong> and <strong>Deep Learning</strong> focused on medical image analysis. His master's thesis at Institut Teknologi Sepuluh Nopember (ITS) developed detection of <strong>Acute Lymphoblastic Leukemia</strong> subtypes on microscopic blood images, and he now continues his research at Telkom University on diabetic retinopathy and liver disease classification.</p>
+        <p>With a strong foundation in <strong>sentiment analysis</strong>, <strong>text mining</strong>, and <strong>predictive machine learning</strong>, he bridges research and product. As a <strong>Full-Stack Developer</strong> and <strong>PHP Developer</strong>, he builds real-world applications — clinic systems, attendance, logistics, and AI services powered by RAG — using a modern stack including Next.js, NestJS, and FastAPI.</p>
+        <div class="chips">
+          <span class="chip brand">Computer Vision</span>
+          <span class="chip brand">Deep Learning</span>
+          <span class="chip">Data Mining</span>
+          <span class="chip">Sentiment Analysis</span>
+          <span class="chip">Text Mining</span>
+          <span class="chip">Object Detection</span>
+          <span class="chip">Full-Stack Dev</span>
+        </div>
+      </div>
+      <div class="info-card reveal">
+        <h4>Quick Info</h4>
+        <div class="info-row"><span class="k">Affiliation</span><span class="v">Telkom University (ex-ITS)</span></div>
+        <div class="info-row"><span class="k">Location</span><span class="v">Surabaya, East Java, ID</span></div>
+        <div class="info-row"><span class="k">Role</span><span class="v">Researcher &amp; Full-Stack Dev</span></div>
+        <div class="info-row"><span class="k">Focus</span><span class="v">Medical Computer Vision</span></div>
+        <div class="info-row"><span class="k">Network</span><span class="v">200+ LinkedIn connections</span></div>
+        <div class="info-row"><span class="k">LinkedIn</span><span class="v"><a href="https://www.linkedin.com/in/tanzilal-mustaqim/" target="_blank" style="color:var(--brand)">in/tanzilal-mustaqim</a></span></div>
+      </div>
+    </div>
+    <div style="margin-top:44px">
+      <h3 style="font-size:20px;margin-bottom:6px" class="reveal">Education</h3>
+      <div class="edu-grid">
+        <div class="edu reveal">
+          <div class="cap">🎓</div>
+          <div>
+            <h4>Institut Teknologi Sepuluh Nopember</h4>
+            <div class="deg">Doctoral (Ph.D.), Informatics</div>
+            <div class="yr">Dissertation: Detecting Acute Lymphoblastic Leukemia subtypes on limited, varied &amp; overlapping microscopic image datasets</div>
+          </div>
+        </div>
+        <div class="edu reveal">
+          <div class="cap">🎓</div>
+          <div>
+            <h4>Institut Teknologi Sepuluh Nopember</h4>
+            <div class="deg">Master's, Informatics — Computer Vision</div>
+            <div class="yr">Thesis: YOLOv4 modification for Acute Lymphoblastic Leukemia subtype detection</div>
+          </div>
+        </div>
+        <div class="edu reveal">
+          <div class="cap">🎓</div>
+          <div>
+            <h4>Universitas Negeri Semarang</h4>
+            <div class="deg">Undergraduate, Computer Science</div>
+            <div class="yr">Foundation in data mining, machine learning &amp; software engineering</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" style="background:var(--surface-2)">
+  <div class="wrap">
+    <span class="eyebrow reveal">Projects</span>
+    <h2 class="sec-title reveal">Featured GitHub projects</h2>
+    <p class="sec-lead reveal">A selection from 85 repositories — from reproducible research to production apps.</p>
+    <div class="proj-grid" id="projgrid" style="margin-top:34px"></div>
+    <p class="proj-note reveal">…and dozens more: clinic systems, logistics, automated tax bookkeeping for SMEs, scraping engines, and more at <a href="https://github.com/jossman14" target="_blank" style="color:var(--brand);font-weight:600">@jossman14</a>.</p>
+  </div>
+</section>
+
+<section id="research">
+  <div class="wrap">
+    <span class="eyebrow reveal">Research Focus</span>
+    <h2 class="sec-title reveal">Five core research tracks</h2>
+    <p class="sec-lead reveal">From medical imaging to text analytics — impactful research with high citations.</p>
+    <div class="theme-grid" style="margin-top:34px">
+      <div class="theme reveal"><span class="n">8 papers</span><div class="ic">🔬</div><h3>Leukemia Detection (ALL)</h3><p>Detecting Acute Lymphoblastic Leukemia subtypes on microscopic blood images with YOLO, Mask R-CNN, GhostNet &amp; Swin Transformer.</p></div>
+      <div class="theme reveal"><span class="n">5 papers</span><div class="ic">👁️</div><h3>Diabetic Retinopathy</h3><p>Retinal image classification using Swin Transformer self-attention, EfficientNet + DenseNet fusion, and a web-based early-detection system.</p></div>
+      <div class="theme reveal"><span class="n">2 papers</span><div class="ic">🩻</div><h3>Liver Disease</h3><p>Ultrasound liver image classification with metaheuristic-optimized ConvNeXt and a machine-learning early-detection dashboard.</p></div>
+      <div class="theme reveal"><span class="n">6 papers</span><div class="ic">💬</div><h3>Sentiment &amp; Text Mining</h3><p>VADER, KNN, memory networks &amp; IndoBERT for public-opinion analysis, aspect-based sentiment, and AI-essay detection.</p></div>
+      <div class="theme reveal"><span class="n">3 papers</span><div class="ic">📈</div><h3>Predictive ML</h3><p>Ensemble stacking, LightGBM, XGBoost &amp; SMOTE for bankruptcy prediction, bank deposits, and app-rating forecasting.</p></div>
+      <div class="theme reveal"><span class="n">10+ papers</span><div class="ic">🧠</div><h3>Other Computer Vision</h3><p>Face recognition (wavelet+LBP), Covid-19 detection from lung ultrasound, ECG arrhythmia classification, and audio data hiding.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="publications" style="background:var(--surface-2)">
+  <div class="wrap">
+    <span class="eyebrow reveal">Publications</span>
+    <h2 class="sec-title reveal">Selected publications</h2>
+    <p class="sec-lead reveal">34 publications in international journals &amp; conferences. Filter by topic and browse by page.</p>
+    <div class="filters reveal" id="filters">
+      <button class="filter active" data-f="all">All</button>
+      <button class="filter" data-f="leukemia">Leukemia</button>
+      <button class="filter" data-f="retina">Retinopathy</button>
+      <button class="filter" data-f="liver">Liver</button>
+      <button class="filter" data-f="nlp">Sentiment/NLP</button>
+      <button class="filter" data-f="ml">Predictive ML</button>
+      <button class="filter" data-f="cv">Other CV</button>
+    </div>
+    <div class="pub-list" id="publist"></div>
+    <div class="pager" id="pager"></div>
+    <div class="pub-more">
+      <a href="https://scholar.google.com/citations?user=ltFcWtEAAAAJ&hl=id" target="_blank" class="btn btn-ghost">See all on Google Scholar
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M8 7h9v9"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="books">
+  <div class="wrap">
+    <span class="eyebrow reveal">Books</span>
+    <h2 class="sec-title reveal">Published books</h2>
+    <div class="books reveal">
+      <div class="book">
+        <div class="cover a">DEEP LEARNING</div>
+        <div><h4>Deep Learning: Teori Dasar untuk Pemula</h4><span>Penerbit Andi · 2025<br>with C. Fatichah, N. Suciati, et al.</span></div>
+      </div>
+      <div class="book">
+        <div class="cover b">IMAGE PROCESSING</div>
+        <div><h4>Image Processing Komprehensif untuk Sistem Visi Cerdas</h4><span>Deepublish · 2025</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact reveal">
+      <h2>Let's collaborate.</h2>
+      <p>Open to research collaboration, mentoring, and software development projects. Reach out anytime.</p>
+      <div class="contact-actions">
+        <a href="mailto:derekln14@gmail.com" class="btn btn-white">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+          derekln14@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/tanzilal-mustaqim/" target="_blank" class="btn btn-outline">LinkedIn</a>
+        <a href="https://github.com/jossman14" target="_blank" class="btn btn-outline">GitHub</a>
+        <a href="https://scholar.google.com/citations?user=ltFcWtEAAAAJ&hl=id" target="_blank" class="btn btn-outline">Scholar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fsoc">
+      <a href="https://www.linkedin.com/in/tanzilal-mustaqim/" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.07c.67-1.2 2.3-2.5 4.73-2.5 5.06 0 6 3.3 6 7.6V24h-5v-7.1c0-1.7 0-3.9-2.4-3.9s-2.75 1.86-2.75 3.78V24h-5V8z"/></svg></a>
+      <a href="https://scholar.google.com/citations?user=ltFcWtEAAAAJ&hl=id" target="_blank" aria-label="Scholar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z"/></svg></a>
+      <a href="https://github.com/jossman14" target="_blank" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02.8-.22 1.65-.33 2.5-.33.85 0 1.7.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 22 12c0-5.52-4.48-10-10-10z"/></svg></a>
+      <a href="https://x.com/DerekLeon14" target="_blank" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.5 8.6L23 22h-6.9l-5.4-7-6.2 7H1.4l8-9.2L1 2h7l4.9 6.5L18.9 2zm-2.4 18h1.9L7.6 4H5.6l10.9 16z"/></svg></a>
+    </div>
+    © 2026 Tanzilal Mustaqim · Researcher &amp; Full-Stack Developer · Surabaya, Indonesia
+  </div>
+</footer>
+
+<script>
+const pubs=[
+ {t:"Twitter text mining for sentiment analysis on government's response to forest fires with VADER lexicon polarity detection and KNN",v:"Journal of Physics: Conf. Series",y:2020,c:78,f:"nlp"},
+ {t:"Deep learning for the detection of ALL subtypes on microscopic images: A systematic literature review",v:"IEEE Access",y:2023,c:75,f:"leukemia"},
+ {t:"An ensemble stacking algorithm to improve model accuracy in bankruptcy prediction",v:"Journal of Data Science and Intelligent Systems",y:2024,c:42,f:"ml"},
+ {t:"Aspect based sentiment analysis of product review using memory network",v:"Scientific Journal of Informatics",y:2022,c:38,f:"nlp"},
+ {t:"Accuracy of Malaysia public response to economic factors during Covid-19 using VADER and Random Forest",v:"J. of Information System Exploration and Research",y:2023,c:28,f:"nlp"},
+ {t:"Bank predictions for prospective long-term deposit investors using LightGBM and SMOTE",v:"Journal of Physics: Conf. Series",y:2021,c:16,f:"ml"},
+ {t:"Detection of ALL subtypes using YOLO and Mask R-CNN",v:"5th ISRITI",y:2022,c:13,f:"leukemia"},
+ {t:"Wavelet transformation and LBP for data augmentation in deep learning-based face recognition",v:"10th ICoICT",y:2022,c:11,f:"cv"},
+ {t:"Combination of CSPNet and GhostNet with SPP on YOLOv4 for ALL subtype detection in multi-cell blood",v:"Scientific Journal of Informatics",y:2022,c:10,f:"leukemia"},
+ {t:"Modification of YOLO with GhostNet to reduce parameters for detecting ALL",v:"ICACSIS",y:2022,c:10,f:"leukemia"},
+ {t:"Reversible audio data hiding using samples greatest common factor and audio interpolation",v:"IEEE 12th CCWC",y:2022,c:10,f:"cv"},
+ {t:"Prediksi Rating Aplikasi Playstore Menggunakan XGBoost",v:"Proceedings of SNIK",y:2020,c:7,f:"ml"},
+ {t:"Arrhythmia classification with ECG signal using XGBoost algorithm",v:"J. of Technology and Informatics (JoTI)",y:2024,c:6,f:"cv"},
+ {t:"FocusAugMix: A data augmentation method for enhancing ALL classification",v:"Intelligent Systems with Applications",y:2025,c:5,f:"leukemia"},
+ {t:"A deep learning model comparison for diabetic retinopathy image classification",v:"Scientific Journal of Informatics",y:2025,c:5,f:"retina"},
+ {t:"Analysis of public opinion on religion and politics in Indonesia using k-means & VADER",v:"Int. Conf. on Science and Engineering",y:2020,c:4,f:"nlp"},
+ {t:"Detection of Covid-19 based on lung ultrasound image using CNN architectures",v:"4th ISRITI",y:2021,c:3,f:"cv"},
+ {t:"Sentiment prediction accuracy of Amazon fine food review using TF-IDF and LightGBM",v:"Int. Conf. on Science and Engineering",y:2021,c:3,f:"nlp"},
+ {t:"Improving YOLOv8 performance using Gray Wolf Optimizer to detect ALL",v:"IEIT",y:2024,c:2,f:"leukemia"},
+ {t:"Identification of ALL subtypes using object detection with Swin Transformer",v:"7th ICMHI",y:2023,c:2,f:"leukemia"},
+ {t:"Improving DR detection sensitivity via Hierarchical Self-Attention on Swin Transformer",v:"Jurnal Algoritma",y:2025,c:1,f:"retina"},
+ {t:"Comparison of preprocessing methods for diabetic retinopathy images using deep learning",v:"Jurnal Algoritma",y:2025,c:1,f:"retina"},
+ {t:"Prototype design of a website-based diabetic retinopathy early-detection system",v:"Jurnal Algoritma",y:2025,c:1,f:"retina"},
+ {t:"Community service: social-assistance implementation for Dalegan Village, Gresik",v:"JUMADI: Jurnal Masyarakat Mengabdi",y:2024,c:1,f:"ml"},
+ {t:"Metaheuristic-Optimized ConvNeXt architecture for ultrasound-based liver disease classification",v:"8th ISRITI",y:2025,c:0,f:"liver"},
+ {t:"Early detection dashboard for liver disease using machine learning classification",v:"8th ISRITI",y:2025,c:0,f:"liver"},
+ {t:"Fusing EfficientNet and DenseNet for robust diabetic retinopathy classification",v:"15th ICoICT",y:2025,c:0,f:"retina"},
+ {t:"Comparative analysis of high school student and AI-generated essays using IndoBERT",v:"Scientific Journal of Informatics",y:2025,c:0,f:"nlp"}
+];
+const labels={leukemia:'Leukemia',retina:'Retinopathy',liver:'Liver',nlp:'Sentiment/NLP',ml:'Predictive ML',cv:'Computer Vision'};
+const PER_PAGE=6;
+let curFilter='all', curPage=1;
+const list=document.getElementById('publist'), pager=document.getElementById('pager');
+function filtered(){return pubs.filter(p=>curFilter==='all'||p.f===curFilter);}
+function renderPubs(){
+  const data=filtered();
+  const pages=Math.max(1,Math.ceil(data.length/PER_PAGE));
+  if(curPage>pages)curPage=pages;
+  const start=(curPage-1)*PER_PAGE;
+  const slice=data.slice(start,start+PER_PAGE);
+  list.innerHTML='';
+  slice.forEach(p=>{
+    const el=document.createElement('div');el.className='pub';
+    el.innerHTML=`<div><h4>${p.t}</h4><div class="meta">${p.v}</div>
+      <div class="tags"><span class="tag year">${p.y}</span><span class="tag">${labels[p.f]}</span></div></div>
+      <div class="cite ${p.c>=20?'hot':''}"><b>${p.c}</b><span>citations</span></div>`;
+    list.appendChild(el);
+  });
+  renderPager(pages,data.length,start,slice.length);
+}
+function renderPager(pages,total,start,count){
+  pager.innerHTML='';
+  const prev=btn('‹ Prev',()=>{if(curPage>1){curPage--;renderPubs();scrollTop();}});
+  prev.disabled=curPage===1; pager.appendChild(prev);
+  for(let i=1;i<=pages;i++){
+    const b=btn(i,()=>{curPage=i;renderPubs();scrollTop();});
+    if(i===curPage)b.classList.add('active');
+    pager.appendChild(b);
+  }
+  const next=btn('Next ›',()=>{if(curPage<pages){curPage++;renderPubs();scrollTop();}});
+  next.disabled=curPage===pages; pager.appendChild(next);
+  const info=document.createElement('span');info.className='info';
+  info.textContent=`${start+1}–${start+count} of ${total}`;
+  pager.appendChild(info);
+}
+function btn(label,fn){const b=document.createElement('button');b.textContent=label;b.onclick=fn;return b;}
+function scrollTop(){document.getElementById('publications').scrollIntoView({behavior:'smooth',block:'start'});}
+document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');curFilter=b.dataset.f;curPage=1;renderPubs();
+}));
+renderPubs();
+
+const projects=[
+ {n:"ALL-Lightweight-ViT",d:"Lightweight Vision Transformers for Acute Lymphoblastic Leukemia detection — research reproducibility repo.",lang:"Python",col:"#3572A5",kind:"Public",stack:["ViT","Deep Learning","Research"]},
+ {n:"MGAT-KD",d:"Multi-graph attention based knowledge distillation for model compression.",lang:"Python",col:"#3572A5",kind:"MIT",stack:["Knowledge Distillation","GNN"]},
+ {n:"rag-app",d:"RAG Application — FastAPI backend + Next.js frontend with pgvector for semantic search.",lang:"Python",col:"#3572A5",kind:"Private",stack:["FastAPI","Next.js","pgvector"]},
+ {n:"absensi",d:"Multi-tenant attendance app with WhatsApp OTP — containerized architecture.",lang:"TypeScript",col:"#3178c6",kind:"Private",stack:["NestJS","Docker","Nginx"]},
+ {n:"scrapeforge",d:"Self-hosted web data API — Firecrawl-compatible, Scrapling-powered, low-RAM optimized.",lang:"Python",col:"#3572A5",kind:"MIT",stack:["Scraping","API","Self-hosted"]},
+ {n:"scopus-journal-db",d:"Scopus & Scimago journal database API for journal search and analysis.",lang:"TypeScript",col:"#3178c6",kind:"Private",stack:["FastAPI","PostgreSQL"]},
+ {n:"eisenhower-todo",d:"Todo list with the Eisenhower Matrix + AI prioritization.",lang:"TypeScript",col:"#3178c6",kind:"Private",stack:["NestJS","Next.js","Prisma"]},
+ {n:"sawahcerdas",d:"Weather and crop-pest prediction app for farmers.",lang:"TypeScript",col:"#3178c6",kind:"Private",stack:["ML","Web App"]},
+ {n:"ongkir-api",d:"RajaOngkir shipping-cost API implementation with Laravel 10 and MySQL.",lang:"PHP",col:"#4F5D95",kind:"Public",stack:["Laravel","MySQL","REST"]}
+];
+const pg=document.getElementById('projgrid');
+projects.forEach(p=>{
+  const el=document.createElement('a');el.className='proj';el.href="https://github.com/jossman14";el.target="_blank";
+  el.innerHTML=`<div class="top"><span class="lang"><i style="background:${p.col}"></i>${p.lang}</span><span class="kind">${p.kind}</span></div>
+    <h3>${p.n}</h3><p>${p.d}</p>
+    <div class="stack">${p.stack.map(s=>`<span>${s}</span>`).join('')}</div>`;
+  pg.appendChild(el);
+});
+
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>10));
+const burger=document.getElementById('burger'),nl=document.getElementById('navlinks');
+burger.addEventListener('click',()=>nl.classList.toggle('open'));
+nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nl.classList.remove('open')));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
